@@ -32,7 +32,7 @@ Follow these steps to build CraneVM from source:
 1. **Clone the repository:**
 
     ```sh
-    git clone https://github.com/yourusername/CraneVM.git
+    git clone https://github.com/sam-buckley/CraneVM.git
     cd CraneVM
     ```
 
@@ -60,7 +60,7 @@ Follow these steps to build CraneVM from source:
 1. **Clone the repository:**
 
     ```sh
-    git clone https://github.com/yourusername/CraneVM.git
+    git clone https://github.com/sam-buckley/CraneVM.git
     cd CraneVM
     ```
 
@@ -111,7 +111,7 @@ We welcome contributions to CraneVM! To contribute, please follow these steps:
 2. **Clone your fork:**
 
     ```sh
-    git clone https://github.com/yourusername/CraneVM.git
+    git clone https://github.com/sam-buckley/CraneVM.git
     cd CraneVM
     ```
 
