@@ -83,7 +83,9 @@ void parse_args(int argc, char* argv[]) {
         Writer writer = Writer(output_file);
         writer.write(stream);
     } else if (arg == "-p" || arg == "--print") {
-        // print the output to the console
+        Stream stream = Stream("test.cb");
+        stream.read();
+        stream.print();
     } else if (arg == "-s" || arg == "--step") {
         // step through the program
     } else if (arg == "-l" || arg == "--list") {
@@ -104,6 +106,11 @@ void parse_args(int argc, char* argv[]) {
 
 
 int main(int argc, char* argv[]) {
+    //write \0 \5\ \10 to test.cb
+    //open test.cb with fstream
+    auto file = std::fstream("test.cb", std::ios::out | std::ios::binary);
+    file.write("\0\5\10", 3);
+    file.close();
     parse_args(argc, argv);
     return 0;
 }

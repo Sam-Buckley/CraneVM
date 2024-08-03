@@ -7,47 +7,22 @@
 #include <fstream>
 //define the amount of operands for each opcode in an array
 const int operands_amount[] = {
-    2, //ADD
-    2, //SUB
-    2, //MUL
-    2, //DIV
-    2, //MOD
-    1, //INC
-    1, //DEC
-    2, //AND
-    2, //OR
-    2, //XOR
-    1, //NOT
-    2, //SHL
-    2, //SHR
-    2, //CMP_EQ
-    2, //CMP_NEQ
-    2, //CMP_LT
-    2, //CMP_GT
-    2, //CMP_LTE
-    2, //CMP_GTE
-    1, //PUSH
-    1, //POP
-    0, //DUP
-    0, //SWAP
-    1, //JMP
-    1, //JMP_IF_TRUE
-    1, //JMP_IF_FALSE
-    1, //CALL
-    0, //RET
-    2, //LOAD
-    2, //STORE
-    1, //IN
-    1, //OUT
-    2, //MOV
-    2, //LOAD_REG
-    2, //STORE_REG
-    1, //LAB
-    0, //SYS
-    0, //NOP
-    1  //HALT
+    2, 2, 2, 2, 2, // ADD, SUB, MUL, DIV, MOD
+    1, 1,          // INC, DEC
+    2, 2, 2, 1,    // AND, OR, XOR, NOT
+    2, 2,          // SHL, SHR
+    2, 2, 2, 2, 2, 2, // CMP_EQ, CMP_NEQ, CMP_LT, CMP_GT, CMP_LTE, CMP_GTE
+    1, 1,          // PUSH, POP
+    0, 0,          // DUP, SWAP
+    1, 1, 1, 1,    // JMP, JMP_IF_TRUE, JMP_IF_FALSE, CALL
+    0,             // RET
+    2, 2,          // LOAD, STORE
+    1, 1,          // IN, OUT
+    2, 2, 2,       // MOV, LOAD_REG, STORE_REG
+    1,             // LAB
+    0, 0,          // SYS, NOP
+    1              // HALT
 };
-
 Stream::Stream(std::string path) {
     //initialize the reader with the path
     this->reader = Reader(path);

@@ -6,6 +6,49 @@
 #include <vector>
 #include <string>
 
+//define macros for opcodes
+#define OPCODES_MAP(XX) \
+    XX(ADD)            \
+    XX(SUB)            \
+    XX(MUL)            \
+    XX(DIV)            \
+    XX(MOD)            \
+    XX(INC)            \
+    XX(DEC)            \
+    XX(AND)            \
+    XX(OR)             \
+    XX(XOR)            \
+    XX(NOT)            \
+    XX(SHL)            \
+    XX(SHR)            \
+    XX(CMP_EQ)         \
+    XX(CMP_NEQ)        \
+    XX(CMP_LT)         \
+    XX(CMP_GT)         \
+    XX(CMP_LTE)        \
+    XX(CMP_GTE)        \
+    XX(PUSH)           \
+    XX(POP)            \
+    XX(DUP)            \
+    XX(SWAP)           \
+    XX(JMP)            \
+    XX(JMP_IF_TRUE)    \
+    XX(JMP_IF_FALSE)   \
+    XX(CALL)           \
+    XX(RET)            \
+    XX(LOAD)           \
+    XX(STORE)          \
+    XX(IN)             \
+    XX(OUT)            \
+    XX(MOV)            \
+    XX(LOAD_REG)       \
+    XX(STORE_REG)      \
+    XX(LAB)            \
+    XX(SYS)            \
+    XX(NOP)            \
+    XX(HALT)
+
+
 enum class Opcode {
     // Arithmetic Operations
     ADD,            // Addition
