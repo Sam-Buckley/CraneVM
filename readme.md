@@ -8,6 +8,8 @@ Welcome to **CraneVM**, a versatile virtual machine designed for high performanc
   - [Table of Contents](#table-of-contents)
   - [Prerequisites](#prerequisites)
   - [Building CraneVM](#building-cranevm)
+    -   [Windows](#windows)
+    -   [Linux](#linux)
   - [Usage](#usage)
   - [Contributing](#contributing)
   - [License](#license)
@@ -24,6 +26,8 @@ Before you can build CraneVM, you need to have the following software installed 
 ## Building CraneVM
 
 Follow these steps to build CraneVM from source:
+
+### Windows
 
 1. **Clone the repository:**
 
@@ -42,14 +46,43 @@ Follow these steps to build CraneVM from source:
 3. **Run CMake to configure the build:**
 
     ```sh
-    cmake ..
+    cmake -G "Unix Makefiles" .. -B ./
     ```
 
-4. **Build the project using Make:**
+5. **Build the project using Make:**
 
     ```sh
     make
     ```
+
+### Linux
+
+1. **Clone the repository:**
+
+    ```sh
+    git clone https://github.com/yourusername/CraneVM.git
+    cd CraneVM
+    ```
+
+2. **Create a build directory:**
+
+    ```sh
+    mkdir build
+    cd build
+    ```
+
+3. **Run CMake to configure the build:**
+
+    ```sh
+    cmake .. -B ./
+    ```
+
+5. **Build the project using Make:**
+
+    ```sh
+    make
+    ```
+
 
 After these steps, the CraneVM executable should be built and available in the `build` directory.
 
