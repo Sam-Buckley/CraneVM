@@ -11,7 +11,7 @@ include_directories(include include/reader include/structures include/writer)
 set(SOURCES src/main.cpp src/structs/opcodes_funcs.cpp src/reader/stream.cpp src/reader/reader.cpp src/writer/writer.cpp) 
 
 # Add executable
-add_executable(Crane ${SOURCES})
+add_executable(Cranev ${SOURCES})
 
 enable_testing()
 
