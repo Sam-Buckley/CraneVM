@@ -8,10 +8,10 @@ set(CMAKE_CXX_STANDARD 20)
 include_directories(include include/reader include/structures include/writer)
 
 # Add source files
-set(SOURCES src/main.cpp src/structs/opcodes_funcs.cpp)
+set(SOURCES src/main.cpp src/structs/opcodes_funcs.cpp src/reader/stream.cpp src/reader/reader.cpp src/writer/writer.cpp) 
 
 # Add executable
-add_executable(CraneVM ${SOURCES})
+add_executable(Crane ${SOURCES})
 
 enable_testing()
 

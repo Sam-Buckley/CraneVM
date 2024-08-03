@@ -9,6 +9,17 @@ Writer::Writer(std::string path) {
 // Write the output to the file
 void Writer::write(Stream stream) {
     std::ofstream file(this->path, std::ios::out | std::ios::binary);
+    for (int i = 0; i < stream.size(); i++) {
+        file.write((char*)&stream.instructions[i].opcode, sizeof(char));
+        for (int j = 0; j < stream.instructions[i].operands.size(); j++) {
+            file.write((char*)&stream.instructions[i].operands[j], sizeof(char));
+        }
+    }
+    file.close();
+}
+
+/*void Writer::write(Stream stream) {
+    std::ofstream file(this->path, std::ios::out | std::ios::binary);
 
     // Calculate the total number of bytes to be written
     size_t total_size = stream.size(); // Number of instructions
@@ -31,4 +42,4 @@ void Writer::write(Stream stream) {
     // Write the buffer to the file in one operation
     file.write(buffer.data(), buffer.size());
     file.close();
-}
+}*/
