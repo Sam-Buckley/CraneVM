@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.10)
-project(cbvm)
+project(CraneVM)
 
 # Specify the C++ standard
 set(CMAKE_CXX_STANDARD 20)
@@ -11,7 +11,8 @@ include_directories(include include/reader include/structures)
 set(SOURCES src/main.cpp src/structs/opcodes_funcs.cpp)
 
 # Add executable
-add_executable(cbvm ${SOURCES})
+add_executable(CraneVM ${SOURCES})
+add_executable(cvm ${SOURCES}) # Alias for the executable
 
 enable_testing()
 
