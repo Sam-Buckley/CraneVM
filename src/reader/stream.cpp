@@ -53,6 +53,11 @@ Stream::Stream(std::string path) {
     this->reader = Reader(path);
 }
 
+int Stream::size() {
+    //return the size of the instructions vector
+    return this->instructions.size();
+}
+
 void Stream::read() {
     //read the file and store the data in a vector of chars
     std::vector<char> data = this->reader.read();

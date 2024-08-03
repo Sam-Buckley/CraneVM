@@ -13,7 +13,7 @@ class Writer {
     public:
         Writer() = default;
         Writer(std::string path);
-        void write(std::vector<char> data);
+        void write(Stream stream);
     private:
         std::string path;
 };

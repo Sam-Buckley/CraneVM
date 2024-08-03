@@ -15,8 +15,9 @@ class Stream {
         Stream (std::string path);
         void read();
         void print();
-    private:
+        int size();
         std::vector<Instruction> instructions;
+    private:
         Reader reader;
 };
 
