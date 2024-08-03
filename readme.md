@@ -74,7 +74,7 @@ Follow these steps to build CraneVM from source:
 3. **Run CMake to configure the build:**
 
     ```sh
-    cmake .. -B ./
+    cmake -G "Unix Makefiles" .. -B ./
     ```
 
 5. **Build the project using Make:**
