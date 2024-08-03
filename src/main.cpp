@@ -11,6 +11,7 @@
 #include <fstream>
 #include <functions.hpp>
 #include <opcodes.hpp>
+#include <mem.hpp>
 
 //function to parse the arguments
 //usage: Crane [options] [input file] [output file]

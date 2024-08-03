@@ -1,6 +1,6 @@
 #ifndef MEM_HPP
 #define MEM_HPP
-
+#include <string>
 #include <cstddef>
 
 // Constants for memory sizes
@@ -79,6 +79,42 @@ struct Memory {
         char temp[2];
         stack_pop(temp, 2);
         stack_push(temp, 2);
+    }
+    char *stack_top() {
+        return &mem[stack.start];
+    }
+};
+
+enum class PageType {
+    TEXT,
+    DATA,
+    HEAP,
+    STACK
+};
+//structure for pages, they just take a block of memory and divide it into pages, each page is 4KB
+//pages contain 1 method which is to turn itself into a string to be written to files
+struct Page {
+    Block block;
+    char *mem;
+    PageType type;
+    Page(Block b, PageType t, char* m) {
+        block = b;
+        //get the block size of memory from m
+        int length = block.end - block.start + 1;
+        mem = m;
+    }
+    ~Page() {
+        delete[] mem;
+    }
+    std::string to_string() {
+        std::string s;
+        //add header data, such as type and length
+        s += std::to_string(static_cast<char>(type));
+        s += std::to_string(block.end - block.start + 1);
+        for (std::size_t i = 0; i < 4096; i++) {
+            s += mem[i];
+        }
+        return s;
     }
 };
 
